@@ -17,6 +17,12 @@ const Search = () => {
 		setSearchTerm(text);
 	};
 
+    const handleRandomMeal = (e) => {
+        setSearchTerm("");
+        setText("");
+        fetchRandomMeal();
+    }
+
 	return (
 		<header className="search-container">
 			<form onSubmit={onSubmit}>
@@ -30,7 +36,7 @@ const Search = () => {
 				<button className="btn" type="submit">
 					Search
 				</button>
-				<button className="btn btn-hipster" type="btn" onClick={fetchRandomMeal}>
+				<button className="btn btn-hipster" type="btn" onClick={handleRandomMeal}>
 					I'm feeling lucky!
 				</button>
 			</form>
