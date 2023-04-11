@@ -11,10 +11,10 @@ function App() {
 
 	return (
 		<div className="App">
-			<Favorites />
+			{/* <Search /> */}
+			{/* <Favorites /> */}
 			<Meals />
-			<Modal />
-			<Search />
+			{/* <Modal /> */}
 		</div>
 	);
 }
