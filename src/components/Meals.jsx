@@ -5,7 +5,9 @@ import {useGlobalContext} from "../Context"
 
 const Meals = () => {
     const context = useGlobalContext();
-	return <div>{context}</div>;
+    console.log("context ", context)
+    console.log("context meals: ", context.meals)
+	return <div> {JSON.stringify(context.meals, null, 2)}<br /> Forg kinda vibes rn</div>;
 };
 
 export default Meals;
