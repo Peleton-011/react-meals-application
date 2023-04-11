@@ -1,10 +1,10 @@
 import React from "react";
 
 import {useContext} from "react"
-import {AppContext} from "../Context"
+import {useGlobalContext} from "../Context"
 
 const Meals = () => {
-    const context = useContext(AppContext);
+    const context = useGlobalContext();
 	return <div>{context}</div>;
 };
 
