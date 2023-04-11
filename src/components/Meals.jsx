@@ -8,16 +8,16 @@ import Loading from "./Loading";
 import NoResult from "./NoResult";
 
 const Meals = () => {
-	const context = useGlobalContext();
+	const {loading, meals, selectMeal} = useGlobalContext();
 	return (
 		<section className="section-center">
-			{context.loading ? (
+			{loading ? (
 				<Loading />
-			) : context.meals.length < 1 ? (
+			) : meals.length < 1 ? (
 				<NoResult />
 			) : (
-				context.meals.map((meal) => (
-					<Meal key={meal.idMeal} meal={meal} />
+				meals.map((meal) => (
+					<Meal key={meal.idMeal} meal={meal} selectMeal={selectMeal} />
 				))
 			)}
 			<div>Forg kinda vibes rn</div>

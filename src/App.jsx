@@ -9,8 +9,6 @@ import Search from "./components/Search";
 import { useGlobalContext } from "./Context";
 
 function App() {
-	const [count, setCount] = useState(0);
-
 	const { showModal } = useGlobalContext();
 
 	return (
