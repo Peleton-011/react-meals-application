@@ -14,7 +14,7 @@ function App() {
 			<Search />
 			{/* <Favorites /> */}
 			<Meals />
-			{/* <Modal /> */}
+			<Modal />
 		</div>
 	);
 }
