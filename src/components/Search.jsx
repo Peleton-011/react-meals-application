@@ -4,7 +4,7 @@ import { useGlobalContext } from "../Context";
 import { useState } from "react";
 
 const Search = () => {
-	const { setSearchTerm } = useGlobalContext();
+	const { setSearchTerm, fetchRandomMeal } = useGlobalContext();
 
 	const [text, setText] = useState("");
 
@@ -30,7 +30,7 @@ const Search = () => {
 				<button className="btn" type="submit">
 					Search
 				</button>
-				<button className="btn btn-hipster" type="btn">
+				<button className="btn btn-hipster" type="btn" onClick={fetchRandomMeal}>
 					I'm feeling lucky!
 				</button>
 			</form>
