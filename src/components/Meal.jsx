@@ -7,7 +7,6 @@ const Meal = ({ meal }) => {
 			<img
 				src={image}
 				alt={`${title} thumbnail`}
-				style={{ width: "200px" }}
 				className="img"
 			/>
 			<footer>
