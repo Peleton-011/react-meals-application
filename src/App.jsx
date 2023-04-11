@@ -6,15 +6,19 @@ import Meals from "./components/Meals";
 import Modal from "./components/Modal";
 import Search from "./components/Search";
 
+import { useGlobalContext } from "./Context";
+
 function App() {
 	const [count, setCount] = useState(0);
+
+	const { showModal } = useGlobalContext();
 
 	return (
 		<div className="App">
 			<Search />
 			{/* <Favorites /> */}
 			<Meals />
-			<Modal />
+			{showModal && <Modal />}
 		</div>
 	);
 }
