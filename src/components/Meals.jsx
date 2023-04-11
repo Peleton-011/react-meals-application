@@ -1,7 +1,11 @@
 import React from "react";
 
+import {useContext} from "react"
+import {AppContext} from "../Context"
+
 const Meals = () => {
-	return <div>Meals</div>;
+    const context = useContext(AppContext);
+	return <div>{context}</div>;
 };
 
 export default Meals;

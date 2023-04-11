@@ -7,4 +7,4 @@ const AppProvider = ({ children }) => {
 	return <AppContext.Provider value="test-1">{children}</AppContext.Provider>;
 };
 
-export { AppProvider };
+export { AppContext, AppProvider };
