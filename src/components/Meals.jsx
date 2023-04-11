@@ -5,8 +5,6 @@ import { useGlobalContext } from "../Context";
 
 const Meals = () => {
 	const context = useGlobalContext();
-	console.log("context ", context);
-	console.log("context meals: ", context.meals);
 	return (
 		<section>
 			{context.meals.map((meal) => {
