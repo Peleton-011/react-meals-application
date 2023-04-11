@@ -3,16 +3,15 @@ import React from "react";
 import { useContext } from "react";
 import { useGlobalContext } from "../Context";
 
+import Meal from "./Meal";
+
 const Meals = () => {
 	const context = useGlobalContext();
 	return (
-		<section>
-			{context.meals.map((meal) => {
-                console.log(JSON.stringify(meal, null, 2));
-                return (
-                    <h4>Wowie, such meal! Much flavore!</h4>
-                )
-            })}
+		<section className="section-center">
+			{context.meals.map((meal) => (
+				<Meal key={meal.idMeal} meal={meal} />
+			))}
 			<div>Forg kinda vibes rn</div>
 		</section>
 	);
