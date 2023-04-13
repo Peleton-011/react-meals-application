@@ -8,13 +8,19 @@ const AppContext = React.createContext();
 const allMealsUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 const randomMealUrl = "https://www.themealdb.com/api/json/v1/1/random.php";
 
+const getFavoritesFromLocalStorage = () => {
+    const favorites = localStorage.getItem("favorites");
+    if (favorites) return JSON.parse(favorites);
+    return [];
+};
+
 const AppProvider = ({ children }) => {
 	const [meals, setMeals] = useState([]);
 	const [loading, setLoading] = useState(false);
 	const [searchTerm, setSearchTerm] = useState("");
 	const [showModal, setShowModal] = useState(false);
 	const [selectedMeal, setSelectedMeal] = useState(null);
-	const [favorites, setFavorites] = useState([]);
+	const [favorites, setFavorites] = useState(getFavoritesFromLocalStorage());
 
 	const addToFavorites = (idMeal) => {
 		const alreadyFavorite = favorites.find(
@@ -26,6 +32,7 @@ const AppProvider = ({ children }) => {
 
 		const updatedFavorites = [...favorites, selectedMeal];
 		setFavorites(updatedFavorites);
+		localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
 	};
 
 	const removeFromFavorites = (idMeal) => {
@@ -33,6 +40,7 @@ const AppProvider = ({ children }) => {
 			(meal) => meal.idMeal !== idMeal
 		);
 		setFavorites(updatedFavorites);
+		localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
 	};
 
 	const closeModal = () => {
@@ -40,7 +48,7 @@ const AppProvider = ({ children }) => {
 	};
 
 	const selectMeal = (idMeal, favoriteMeal) => {
-        const sourceArray = favoriteMeal ? favorites : meals
+		const sourceArray = favoriteMeal ? favorites : meals;
 		const meal = sourceArray.find((meal) => meal.idMeal === idMeal);
 
 		setSelectedMeal(meal);
