@@ -32,8 +32,8 @@ const AppProvider = ({ children }) => {
 		const updatedFavorites = favorites.filter(
 			(meal) => meal.idMeal !== idMeal
 		);
-        setFavorites(updatedFavorites)
-    };
+		setFavorites(updatedFavorites);
+	};
 
 	const closeModal = () => {
 		setShowModal(false);
@@ -82,6 +82,9 @@ const AppProvider = ({ children }) => {
 				selectMeal,
 				selectedMeal,
 				closeModal,
+				favorites,
+				addToFavorites,
+				removeFromFavorites,
 			}}
 		>
 			{children}

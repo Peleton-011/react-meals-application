@@ -8,7 +8,7 @@ import Loading from "./Loading";
 import NoResult from "./NoResult";
 
 const Meals = () => {
-	const {loading, meals, selectMeal} = useGlobalContext();
+	const {loading, meals, selectMeal, addToFavorites} = useGlobalContext();
 	return (
 		<section className="section-center">
 			{loading ? (
@@ -17,7 +17,7 @@ const Meals = () => {
 				<NoResult />
 			) : (
 				meals.map((meal) => (
-					<Meal key={meal.idMeal} meal={meal} selectMeal={selectMeal} />
+					<Meal key={meal.idMeal} meal={meal} selectMeal={selectMeal} addFav={addToFavorites} />
 				))
 			)}
 			<div>Forg kinda vibes rn</div>
