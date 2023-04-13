@@ -17,10 +17,10 @@ const AppProvider = ({ children }) => {
 	const [favorites, setFavorites] = useState([]);
 
 	const addToFavorites = (idMeal) => {
-		const selectedMeal = meals.find((meal) => meal.idMeal === idMeal);
 		const alreadyFavorite = favorites.find(
 			(meal) => meal.idMeal === idMeal
 		);
+		const selectedMeal = meals.find((meal) => meal.idMeal === idMeal);
 
 		if (alreadyFavorite) return;
 
